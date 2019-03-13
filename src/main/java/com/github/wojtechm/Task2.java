@@ -55,6 +55,17 @@ public class Task2 {
         The above example is a pseudo code equivalent of what things might look like without type erasure,
         but unfortunately, it is impossible. Once again, the generic type information is not available at runtime.
 
+
+        One last thing:
+
+            List l = new ArrayList();
+
+        Despite being able to compile, it’s still likely that there will be a warning from the compiler.
+        This is because we are losing the extra compile time check that we get from using generics.
+
+        The point to remember is that while backward compatibility and type erasure
+        make it possible to omit generic types, it is bad practice.
+
         */
     }
 }
