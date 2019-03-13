@@ -17,6 +17,7 @@ public class Task1 {
 
     public static void main(String[] args) {
 //        workWithList();
+//        workWithGenericList();
     }
 
     static void workWithList() {
