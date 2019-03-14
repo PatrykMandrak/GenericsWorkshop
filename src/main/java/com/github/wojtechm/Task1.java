@@ -3,10 +3,11 @@ package com.github.wojtechm;
 /**
  * Times before generics
  * <p>
- * 1. Run java 4
- * 2. Implement method workWithList()
+ * 1. Create new project and run Java 4 (this repo has code written in Java8, so you
+ *    can't simply change version)
+ * 2. Copy and implement method workWithList()
  * 3. See that its bad
- * 4. Jump back to java 8+
+ * 4. Copy paste it back here - Java 8
  * 5. Make sure it still compiles
  * 6. Implement method workWithGenericList()
  * 7. Compare implementations

@@ -32,6 +32,7 @@ public class Task3 {
         IMPORTANT: I have no coding for you in this section.
         If you want, feel free to use 'javap -c' on your classes, in order to see java bytecode
         Bytecode shouldn't be different, or just slightly of (depends on your implementation).
+
         Why?
 
         It’s important to realize that generic type information is only available to the compiler, not the JVM.

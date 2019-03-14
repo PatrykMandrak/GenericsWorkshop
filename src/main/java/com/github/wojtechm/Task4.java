@@ -19,14 +19,10 @@ public class Task4 {
         T clone();
     }
     static class Person {
-        private String name;
     }
     static class Singer extends Person {
-        private String genre;
     }
     static class ElvisPresley extends Singer implements Cloneable<ElvisPresley> {
-
-        private boolean isBestSinger = true;
 
         @Override
         public ElvisPresley clone() {
@@ -55,6 +51,7 @@ public class Task4 {
         If you define Cloneable as 'Cloneable<T extends Cloneable>, You will be sure that clone method
         won't return anything that is not Cloneable.
         It makes sense to think, that if You clone something, then clone itself should be cloneable, doesn't it?
+            // This sentence is kinda complex. Feel free to read it again ;P
 
         Once You update Cloneable, this ugly cast won't be necessary... but we are not done here yet!
         Below you can see an example of parametrized method. You do that by defining new type (T) before return type.

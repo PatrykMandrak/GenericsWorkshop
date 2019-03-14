@@ -22,7 +22,6 @@ public class Task6 {
         T clone();
     }
     static class Person {
-        private String name;
     }
     static class Singer extends Person {
         private String genre;
@@ -39,7 +38,6 @@ public class Task6 {
         }
     }
     static class ElvisPresley extends Singer implements Cloneable<ElvisPresley> {
-        private boolean isBestSinger = true;
 
         ElvisPresley() {
             super("Rock n' Roll");
@@ -48,6 +46,12 @@ public class Task6 {
         @Override
         public ElvisPresley clone() {
             return new ElvisPresley();
+        }
+    }
+
+    private static void workWithSingers(List<? extends Singer> singers, Consumer<Singer> consumer) {
+        for (Singer singer : singers) {
+            consumer.accept(singer);
         }
     }
 
@@ -85,8 +89,8 @@ public class Task6 {
             We need a super class!
 
 
-            For now, you were using 'extends' only - defining an "Upper Bound" of type.
-            Or in other words, You were defining the 'highest' class in inheritance/family tree
+            For now, you were using 'extends' only - defining an "Upper Bound" of type parameter.
+            Or in other words, You were defining the 'highest possible' class in inheritance/family tree
 
                 Object
                    |
@@ -99,12 +103,7 @@ public class Task6 {
             But now we need something above Singer, not below. In order to define "Lower Bound"
             You must use 'super' keyword!
             I'll let you figure out how to do that
+            Fix 'workWithSingers' method, so it accepts both Consumer<Singer> and Consumer<Object>
          */
-    }
-
-    private static void workWithSingers(List<? extends Singer> singers, Consumer<Singer> consumer) {
-        for (Singer singer : singers) {
-            consumer.accept(singer);
-        }
     }
 }
