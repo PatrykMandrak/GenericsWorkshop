@@ -15,10 +15,10 @@ package com.github.wojtechm;
  */
 public class Task4 {
 
-    private interface Cloneable<T> {T clone();}
-    private static class Person {private String name;}
-    private static class Singer extends Person {private String genre;}
-    private static class ElvisPresley extends Singer implements Cloneable<ElvisPresley> {
+    interface Cloneable<T> {T clone();}
+    static class Person {private String name;}
+    static class Singer extends Person {private String genre;}
+    static class ElvisPresley extends Singer implements Cloneable<ElvisPresley> {
 
         private boolean isBestSinger = true;
 
@@ -30,7 +30,9 @@ public class Task4 {
 
     public static void main(String[] args) {
         // Use main method for tests
-        cloneSinger(new ElvisPresley());
+//        cloneSinger(new Person());
+//        cloneSinger(new Singer());
+//        cloneSinger(new ElvisPresley());
     }
 
     private static Cloneable cloneSinger(Cloneable cloneable) {
@@ -59,6 +61,14 @@ public class Task4 {
         
         HINT: Your generic type can extend more that one class. To do that, use '&' ;)
 
+
+        // Bonus: check if you can call 'clone' method multiple times:
+            return cloneable.clone().clone().clone().clone();
+           if (youCan) {
+                System.out.println("Great!");
+           } else {
+                System.out.println("Try to fix that");
+           }
         */
     }
 
