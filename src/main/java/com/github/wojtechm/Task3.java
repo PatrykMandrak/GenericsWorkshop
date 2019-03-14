@@ -1,7 +1,9 @@
 package com.github.wojtechm;
 
 /**
- * As you can see, by using generics we have a compile type check which prevents ClassCastExceptions
+ * Task 1 summary:
+ *
+ * As You have seen, by using generics we have a compile type check which prevents ClassCastExceptions
  * and removes the need for casting.
  *
  * The other advantage is to avoid code duplication.
@@ -9,8 +11,13 @@ package com.github.wojtechm;
  * With generics, we do not have to do this. We can even implement algorithms which apply to generic types.
  * Think about collections - having specific ArrayLists for Strings, ints ect. would be... problematic
  *
+ * Task 2 summary:
  *
- * And now - let's talk about Type Erasure
+ * In second task You've created generic class! Yey!
+ * Also, You have learned that you can't instantiate array of generic type, because
+ * it's type is unknown at runtime... but why? Why is it unknown?
+ *
+ * Let's talk about Type Erasure
  *
  * @author Wojciech Makiela
  */
@@ -25,11 +32,20 @@ public class Task3 {
         IMPORTANT: I have no coding for you in this section.
         If you want, feel free to use 'javap -c' on your classes, in order to see java bytecode
         Bytecode shouldn't be different, or just slightly of (depends on your implementation).
-        Why? Keep reading ;)
+        Why?
 
         It’s important to realize that generic type information is only available to the compiler, not the JVM.
         In other words, 'type erasure' means that generic type information is not available to the JVM at runtime,
         only compile time.
+
+        for all You nerds out there:
+
+            if (currentTime.isCompileTime) {
+                generics.setAvailable(true);
+            } else if (currentTime.isRunTime) {
+                generics.setAvailable(false);
+            }
+        // Bonus task. Can you make that if statement a one liner?
 
         The reasoning behind erasure is simple:
         preserving backward compatibility with older versions of Java.
