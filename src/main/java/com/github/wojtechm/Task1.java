@@ -2,7 +2,7 @@ package com.github.wojtechm;
 
 /**
  * Times before generics
- *
+ * <p>
  * 1. Run java 4
  * 2. Implement method workWithList()
  * 3. See that its bad

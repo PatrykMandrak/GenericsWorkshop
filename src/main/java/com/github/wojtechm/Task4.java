@@ -3,11 +3,11 @@ package com.github.wojtechm;
 
 /**
  * Bounded Parameters!
- *
+ * <p>
  * Let's say we have 3 classes: Person, Singer and ElvisPresley
  * Some people say, that Elvis is still alive, because he was cloned. Fair enough.
  * Our Elvis also will be cloneable.
- *
+ * <p>
  * Below you will find method 'cloneSinger'
  * Implement it ;)
  *
@@ -15,9 +15,15 @@ package com.github.wojtechm;
  */
 public class Task4 {
 
-    interface Cloneable<T> {T clone();}
-    static class Person {private String name;}
-    static class Singer extends Person {private String genre;}
+    interface Cloneable<T> {
+        T clone();
+    }
+    static class Person {
+        private String name;
+    }
+    static class Singer extends Person {
+        private String genre;
+    }
     static class ElvisPresley extends Singer implements Cloneable<ElvisPresley> {
 
         private boolean isBestSinger = true;

@@ -6,10 +6,10 @@ import java.util.List;
 
 /**
  * Generic Inheritance!
- *
+ * <p>
  * Now. We have army of Singers!
- * Lets do something with that ;)
- *
+ * Lets find out what we can do with them!
+ * <p>
  * @author Wojciech Makiela
  */
 public class Task5 {
