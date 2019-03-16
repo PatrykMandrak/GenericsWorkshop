@@ -31,13 +31,13 @@ public class Task3 {
 
         IMPORTANT: I have no coding for you in this section.
         If you want, feel free to use 'javap -c' on your classes, in order to see java bytecode
-        Bytecode shouldn't be different, or just slightly of (depends on your implementation).
+        Bytecode should be the same, or just slightly of (depends on your implementation).
 
         Why?
 
         It’s important to realize that generic type information is only available to the compiler, not the JVM.
         In other words, 'type erasure' means that generic type information is not available to the JVM at runtime,
-        only compile time.
+        because during compilation all information about generics is removed.
 
         for all You nerds out there:
 
@@ -46,7 +46,6 @@ public class Task3 {
             } else if (currentTime.isRunTime) {
                 generics.setAvailable(false);
             }
-        // Bonus task. Can you make that if statement a one liner?
 
         The reasoning behind erasure is simple:
         preserving backward compatibility with older versions of Java.
@@ -61,16 +60,6 @@ public class Task3 {
             List l = new ArrayList();
             List<String> l = new ArrayList<String>();
         No matter which line you use, your bytecode will stay the same.
-
-        It’s important to understand type erasure.
-        Otherwise you might get confused and think they’d be able to get the type at runtime:
-
-        public foo(Consumer<T> consumer) {
-           Type type = consumer.getGenericTypeParameter()
-        }
-
-        The above example is a pseudo code equivalent of what things might look like without type erasure,
-        but unfortunately, it is impossible. Once again, the generic type information is not available at runtime.
 
 
         One last thing:

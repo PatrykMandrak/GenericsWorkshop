@@ -4,29 +4,64 @@ package com.github.wojtechm;
  * Generics!1!!
  * <p>
  * Below you have Task2 class. Make it Generic.
- * I want it to store 2 types. 'T' and 'S', that I
- * can declare however I want.
+ * I want it to store 2 types. 'T' and 'S', that I can declare however I want.
+ *
+ * You can put extra types in same angle brackets ('<>'), by separating them with a comma
  *
  * @author Wojciech Makiela
  */
-public class Task2 {
+public class Task2<T> {
 
     // TODO - T and S fields
+    private final T myFieldOfTypeT = null;
 
 
-    // TODO - fix constructor - accept 2 variables - T and U
+    // TODO - fix constructor - accept 2 variables - T and S
 
-    public Task2() {
+    public Task2(T varOfTypeT) {
+        // TODO - assign variables passed to constructor to fields
     }
 
-
     /*
-    Do not read this part until you finish tasks above.
+    So what the function happened here?
+    Right now you should have a class Task2 that accepts two custom parameters of types <T, S>
+    You have created 2 fields of types T and S, and initialized them in constructor.
+    This allows us to store pair of any objects.
+
+    When to use that?
+    Let's say you are creating Tic-tac-toe game (for example).
+    In that game you might find useful pairing 'Player' object with 'Symbol' object.
+    To do that, you create new class PlayerSymbolPair.
+    But then you think that you also want to have pairs of type 'Players' and 'TTTGame'.
+    To do that, you create new class PlayersTttGamePair.
+    But then you think that... you get the point.
+
+    Creating multiple classes with basically same functionality, but with different types of fields leads
+    to dirty and buggy code.
+
+    Luckily, with the power of generics you can create single class Pair<T, S> that will help you out!
+    What a time to be alive!
+
+    If something will require changing its type, generify it!
+    new Task for you.
+    create new class called 'Bundle'
+    It should store 3 different values! 2 of which should be defined by other programmer;
+    Third element should be of type List<String>!
+
+    Test your implementation:
+    List<String> strings = Arrays.asList("a", "b", "c");
+    Bundle<String, Integer> b = new Bundle("first", 2, strings);
+    assert b.getFirst().equals("first");
+    assert b.getSecond() == 2;
+    assert strings == b.getStrings();
+
 
 
     Now something tricky. I want Task2 class to store an array of T's
-    T[] ts = new T[10];
-    Try changing Task2. Once you fail, continue reading ;)
+
+        T[] ts = new T[10];
+
+    Copy-paste that line to constructor. Once you see that it doesn't work, delete it and continue reading ;)
 
     Each object in Java has a "class" which can be retrieved at runtime,
     using the .getClass() method. Arrays of different component types correspond
