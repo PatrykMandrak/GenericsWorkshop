@@ -1,6 +1,7 @@
 package com.github.wojtechm;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
@@ -53,20 +54,18 @@ public class Task6 {
         Now, lets update the way it behaves.
          */
 
-        Consumer<Singer> convertToKPopSinger = singer -> singer.genre = "KPop";
+        Consumer<Singer> convertToKPopStar = singer -> singer.genre = "KPop";
         List<Singer> singers = Arrays.asList(new ElvisPresley());
-        workWithSingers(singers, convertToKPopSinger);
-        System.out.println(singers.get(0).genre); // Elvis is now KPop king! Oh no!
+        workWithSingers(singers, convertToKPopStar);
+        System.out.println(singers.get(0).genre); // Elvis is now KPop star! Oh no!
 
         /*
         Quick info about Consumer
         It accepts parameter of given type (Singer in this case), and processes it in one way or another
-        You do not need to know anything else at this moment
          */
 
         // But here's the problem
         Consumer<Object> print = System.out::println;
-        singers = Arrays.asList(new ElvisPresley()); // Back to old, Rock n roll Elvis
 //        workWithSingers(singers, print); // Compile error! Uncomment to check it out!
 
         /*
@@ -85,16 +84,42 @@ public class Task6 {
 
                 Object
                    |
-                Person
-                   |
                 Singer
                    |
-                Presley
+              ElvisPresley
 
             But now we need something above Singer, not below. In order to define "Lower Bound"
             You must use 'super' keyword!
-            I'll let you figure out how to do that
-            Fix 'workWithSingers' method, so it accepts both Consumer<Singer> and Consumer<Object>
+            Example:
+            We have 'demo' method that accepts List<? super Integer>
+            Let's break that down:
+                List<?> - this will be a list of some type
+                <? super Integer> - given type will be superclass of Integer
+            As you can see below, 'demo' method accepts List<Integer>, List<Number> and List<Object>
+            (Integer extends Number and Number extends Object)
          */
+
+        List<Integer> integers = Arrays.asList(1,2,3,4,5);
+//        demo(integers);
+
+        List<Number> numbers = new ArrayList<>(integers);
+        numbers.add(3.14);
+//        demo(numbers);
+
+        List<Object> objects = new ArrayList<>(numbers);
+        objects.add(new Object());
+//        demo(objects);
+
+
+        // Once you analyze this example fix 'workWithSingers' method, so it accepts
+        // both Consumer<Singer> and Consumer<Object>
+    }
+
+    private static void demo(List<? super Integer> list) {
+        for (Object o : list) {
+            System.out.print(o);
+            System.out.print(", ");
+        }
+        System.out.println();
     }
 }
