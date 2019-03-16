@@ -5,6 +5,7 @@ package com.github.wojtechm;
  * <p>
  * Below you have Task2 class. Make it Generic.
  * I want it to store 2 types. 'T' and 'S', that I can declare however I want.
+ * Currently it accepts only T. Fix that!
  *
  * You can put extra types in same angle brackets ('<>'), by separating them with a comma
  *
@@ -13,13 +14,14 @@ package com.github.wojtechm;
 public class Task2<T> {
 
     // TODO - T and S fields
-    private final T myFieldOfTypeT = null;
+    private final T myFieldOfTypeT;
 
 
     // TODO - fix constructor - accept 2 variables - T and S
 
     public Task2(T varOfTypeT) {
         // TODO - assign variables passed to constructor to fields
+        this.myFieldOfTypeT = varOfTypeT;
     }
 
     /*
@@ -30,7 +32,7 @@ public class Task2<T> {
 
     When to use that?
     Let's say you are creating Tic-tac-toe game (for example).
-    In that game you might find useful pairing 'Player' object with 'Symbol' object.
+    In that game you might find pairing 'Player' and 'Symbol' objects very useful.
     To do that, you create new class PlayerSymbolPair.
     But then you think that you also want to have pairs of type 'Players' and 'TTTGame'.
     To do that, you create new class PlayersTttGamePair.
@@ -43,12 +45,13 @@ public class Task2<T> {
     What a time to be alive!
 
     If something will require changing its type, generify it!
-    new Task for you.
-    create new class called 'Bundle'
-    It should store 3 different values! 2 of which should be defined by other programmer;
-    Third element should be of type List<String>!
 
-    Test your implementation:
+    Next task for you:
+    Create new class called 'Bundle'
+    It should store 3 different values! 2 of which should be generic;
+    Third element should be ALWAYS of type List<String>! (Don't try to generify it (yet). Just hardcode its type)
+
+    Once you're done, test your implementation:
     List<String> strings = Arrays.asList("a", "b", "c");
     Bundle<String, Integer> b = new Bundle("first", 2, strings);
     assert b.getFirst().equals("first");
@@ -56,7 +59,7 @@ public class Task2<T> {
     assert strings == b.getStrings();
 
 
-
+    New task! Yey!
     Now something tricky. I want Task2 class to store an array of T's
 
         T[] ts = new T[10];

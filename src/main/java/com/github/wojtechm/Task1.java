@@ -67,7 +67,7 @@ public class Task1 {
     }
 
     /** SUMMARY:
-     * Before you start reading make sure you have finished first 7 steps listed above class declaration
+     * Before you start reading, make sure you have finished first 7 steps listed above class declaration
      *
      * Now you should have 2 similar implementations. One that uses Generics, and one that does not.
      * If you couldn't implement first method in plain Java4 style (because of reasons i guess),
@@ -94,7 +94,7 @@ public class Task1 {
         strings.add("first");
 //        strings.add(3); // Compiler error
 
-        // Retrieving data before generics required manual casts
+        // Retrieving data before generics required manual casting
         // Now compiler knows type of variables in list, so it 'adds' casts in compile time
         // After all, cast still exists in bytecode, but it's not in source code
         // This makes code cleaner and easier to understand
