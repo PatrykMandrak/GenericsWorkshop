@@ -17,7 +17,7 @@ public class Task5 {
     // Yeah. I know. Copy-paste development.
     // BUT! New methods are were introduced! Take a look
     interface Cloneable<T> {
-        T clone();
+        T createClone();
     }
     static class Person {
     }
@@ -42,7 +42,7 @@ public class Task5 {
         }
 
         @Override
-        public ElvisPresley clone() {
+        public ElvisPresley createClone() {
             return new ElvisPresley(super.genre);
         }
     }

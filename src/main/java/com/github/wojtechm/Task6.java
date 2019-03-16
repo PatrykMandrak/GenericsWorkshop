@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class Task6 {
 
     interface Cloneable<T> {
-        T clone();
+        T createClone();
     }
     static class Person {
     }
@@ -44,7 +44,7 @@ public class Task6 {
         }
 
         @Override
-        public ElvisPresley clone() {
+        public ElvisPresley createClone() {
             return new ElvisPresley();
         }
     }
