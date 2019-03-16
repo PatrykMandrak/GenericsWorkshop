@@ -18,12 +18,7 @@ import java.util.function.Consumer;
  */
 public class Task6 {
 
-    interface Cloneable<T> {
-        T createClone();
-    }
-    static class Person {
-    }
-    static class Singer extends Person {
+    static class Singer {
         private String genre;
 
         Singer(String genre) {
@@ -37,16 +32,12 @@ public class Task6 {
                     '}';
         }
     }
-    static class ElvisPresley extends Singer implements Cloneable<ElvisPresley> {
+    static class ElvisPresley extends Singer {
 
         ElvisPresley() {
             super("Rock n' Roll");
         }
 
-        @Override
-        public ElvisPresley createClone() {
-            return new ElvisPresley();
-        }
     }
 
     private static void workWithSingers(List<? extends Singer> singers, Consumer<Singer> consumer) {

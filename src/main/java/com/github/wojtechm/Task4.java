@@ -22,9 +22,7 @@ public class Task4 {
     interface Cloneable<T> {
         T createClone();
     }
-    static class Person {
-    }
-    static class Singer extends Person {
+    static class Singer {
     }
     static class ElvisPresley extends Singer implements Cloneable<ElvisPresley> {
 
