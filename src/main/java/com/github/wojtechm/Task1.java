@@ -27,7 +27,7 @@ public class Task1 {
         testBundleClassForTask2();
     }
 
-    private static void testBundleClassForTask2() {
+    static void testBundleClassForTask2() {
         List<String> strings = Arrays.asList("a", "b", "c");
         Bundle<String, Integer> b = new Bundle<>("first", 2, strings);
         assert b.getFirst().equals("first");
