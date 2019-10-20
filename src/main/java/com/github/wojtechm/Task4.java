@@ -19,7 +19,7 @@ package com.github.wojtechm;
  */
 public class Task4 {
 
-    interface Cloneable<T> {
+    interface Cloneable<T extends Cloneable> {
         T createClone();
     }
     static class Singer {
@@ -38,7 +38,7 @@ public class Task4 {
     }
 
     private static Cloneable cloneSinger(Cloneable cloneable) {
-        return (Cloneable) cloneable.createClone();
+        return cloneable.createClone().createClone().createClone();
         /*
         Look at that ugly cast! Why is it here?
         Delete '(Cloneable)' and read error description.
@@ -81,7 +81,7 @@ public class Task4 {
         */
     }
 
-    private static <T> T returnT(T t) {
+    private static <T extends Singer & Cloneable> T returnT(T t) {
         // T type is available only in this method
         System.out.println(t);
         return t;

@@ -27,7 +27,6 @@ public class Task2<T, S> {
         // TODO - assign variables passed to constructor to fields
         this.myFieldOfTypeT = varOfTypeT;
         this.myFieldOfTypeS = varOfTypeS;
-        T[] ts = new T[10];
     }
 
 
