@@ -41,7 +41,7 @@ public class Task6 {
 
     }
 
-    private static void workWithSingers(List<? extends Singer> singers, Consumer<Singer> consumer) {
+    private static void workWithSingers(List<? extends Singer> singers, Consumer<? super Singer> consumer) {
         for (Singer singer : singers) {
             consumer.accept(singer);
         }
@@ -66,7 +66,7 @@ public class Task6 {
 
         // But here's the problem
         Consumer<Object> print = System.out::println;
-//        workWithSingers(singers, print); // Compile error! Uncomment to check it out!
+        workWithSingers(singers, print); // Compile error! Uncomment to check it out!
 
         /*
             I know that Singer can be printed.
