@@ -1,6 +1,7 @@
 package com.github.wojtechm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -21,39 +22,20 @@ import java.util.List;
 public class Task1 {
 
     public static void main(String[] args) {
-        workWithList();
+        //workWithList();
         workWithGenericList();
+        testBundleClassForTask2();
+    }
+
+    private static void testBundleClassForTask2() {
+        List<String> strings = Arrays.asList("a", "b", "c");
+        Bundle<String, Integer> b = new Bundle<>("first", 2, strings);
+        assert b.getFirst().equals("first");
+        assert b.getSecond() == 2;
+        assert strings == b.getStrings();
     }
 
     static void workWithList() {
-        // Create new list, and call it 'strings'
-        List strings = new ArrayList();
-
-        // Add strings 'first' and 'second' to your list
-        strings.add("first");
-        strings.add("second");
-
-
-        // Be a naughty boy/girl, and add an Integer '3'
-        // Remember. Autoboxing (automatic converting primitives to corresponding Wrapper objects) was
-        // introduced in Java5, so you must use 'new Integer(3)', not just '3'
-        strings.add(3);
-
-        // I know it looks bad, but keep going
-        // Get first element from your list, and assign it
-        // to a variable of type String
-        // In Java4 all lists were considered lists of objects
-        // In order to assign element from collection to variable of type other than Object
-        // you must use Casting
-        String first = (String) strings.get(0); //{YourCode - get element 0 and cast it to (String)}
-
-        // Do the same for last element
-        String last = (String) strings.get(strings.size() - 1); //{YourCode - get last element and cast it to (String)}
-
-        // Run the method -> You should get ClassCastException
-    }
-
-    static void workWithGenericList() {
         // Create new list, and call it 'strings'
         List strings = new ArrayList();
 
@@ -71,6 +53,27 @@ public class Task1 {
 
         // Do the same for last element
         String s2 = (String) strings.get(2);
+        // Run the method
+    }
+
+    static void workWithGenericList() {
+        // Create new list of type <String>, and call it 'strings'
+        List<String> strings = new ArrayList<>();
+
+        // Add strings 'first' and 'second' to your list
+        strings.add("first");
+        strings.add("second");
+
+        // Be a naughty boy/girl, and add an Integer '3'
+        //strings.add(3);
+
+        // Hah! Compile error!
+        // Comment that line so it compiles again
+
+        // Get first element from your list, and assign it
+        // to a variable of type String
+        String first = strings.get(0);
+
         // Run the method
     }
 

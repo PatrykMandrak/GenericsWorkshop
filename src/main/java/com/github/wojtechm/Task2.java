@@ -1,5 +1,8 @@
 package com.github.wojtechm;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Generics!1!!
  * <p>
@@ -11,18 +14,22 @@ package com.github.wojtechm;
  *
  * @author Wojciech Makiela
  */
-public class Task2<T> {
+public class Task2<T, S> {
 
     // TODO - T and S fields
     private final T myFieldOfTypeT;
+    private final S myFieldOfTypeS;
 
 
     // TODO - fix constructor - accept 2 variables - T and S
 
-    public Task2(T varOfTypeT) {
+    public Task2(T varOfTypeT, S varOfTypeS) {
         // TODO - assign variables passed to constructor to fields
         this.myFieldOfTypeT = varOfTypeT;
+        this.myFieldOfTypeS = varOfTypeS;
+        T[] ts = new T[10];
     }
+
 
     /*
     So what the function happened here?
@@ -96,7 +103,24 @@ public class Task2<T> {
         T - Type
         V - Value
         S,U,V etc. - 2nd, 3rd, 4th types after T is used
+        // Create new list of type <String>, and call it 'strings'
+        List<String> strings = new ArrayList<>();
 
+        // Add strings 'first' and 'second' to your list
+        strings.add("first");
+        strings.add("second");
+
+        // Be a naughty boy/girl, and add an Integer '3'
+        //strings.add(3);
+
+        // Hah! Compile error!
+        // Comment that line so it compiles again
+
+        // Get first element from your list, and assign it
+        // to a variable of type String
+        String first = strings.get(0);
+
+        // Run the method
 
      */
 }
